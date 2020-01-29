@@ -1,0 +1,17 @@
+{
+  "name": "skiJumper'sNote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test.calculate*.js",
+    "test:watch": "mocha test.calculate*.js -b -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^7.0.0",
+    "onchange": "^6.1.0"
+  }
+}
