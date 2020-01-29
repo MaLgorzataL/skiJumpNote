@@ -17,3 +17,4 @@ describe('calculateTotalPoints', () => {
         assert.equal(actual, expected);
     });
 });
+
