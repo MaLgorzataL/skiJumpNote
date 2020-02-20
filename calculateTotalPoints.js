@@ -4,34 +4,17 @@ const calculateStylePoints = require('./calculateStylePoints');
 
 const calculateTotalPoints = (distance, hillSize, kPoint, styleNotes, windFactor, gateFactor) => {
   const distancePoints = calculateDistancePoints(distance, hillSize, kPoint);
-  switch (distancePoints)  {
-    case ((distancePoints === null) || (isNaN(distancePoints) === true)): 
+  const stylePoints = calculateStylePoints(styleNotes);
+
+    if ((distancePoints === null) || (isNaN(distancePoints) === true) ||
+        (stylePoints === null) || (isNaN(stylePoints)) ||
+        (windFactor === null) || (isNaN(windFactor) === true) ||
+        (gateFactor === null) || (isNaN(gateFactor) === true))
+        {
       return null;
-      break;
-    default: 
-      const stylePoints = calculateStylePoints(styleNotes);
-  };
-  switch(stylePoints) {
-    case ((stylePoints === null) || (isNaN(stylePoints) === true)): 
-      return null;
-      break;
-    default:
-      distancePoints = distancePoints + stylePoints;
-  };
-  switch(windFactor) {
-    case ((windFactor === null) || (isNaN(windFactor) === true)):
-      return null;
-      break;
-    default:
-      distancePoints = distancePoints + windFactor;
-  };
-  switch(gateFactor) {
-    case ((gateFactor === null) || (isNaN(gateFactor) === true)):
-      return null;
-      break;
-    default:
-        return distancePoints + gateFactor;     
-  }
+    } else {
+      return distancePoints + stylePoints + windFactor + gateFactor;
+    };
 };
 
 module.exports = calculateTotalPoints;

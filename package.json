@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha calculate*.test.js",
-    "test:watch": "mocha test.calculate*.js -b -w"
+    "test:watch": "mocha calculate*.test.js -b -w"
   },
   "keywords": [],
   "author": "",

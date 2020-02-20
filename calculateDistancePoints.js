@@ -16,20 +16,15 @@ const calculateDistancePoints = (distance, hillSize, kPoint) => {
       break;
       default:
         return null;
-      }
-    }
   };
   if (startPoints === 0) {
     alert('Nie podano typu skoczni');
     return 0;
   };
-  if (distance <=0) {
-    return null
-  };
-  if ((distance === null) || (hillSize === null) || (kPoint === null)) {
-    return null
+  if ((distance <= 0) || (distance === null) || (hillSize === null) || (kPoint === null)) {
+      return null 
   } else {
-    return startPoints + (distance - kPoint)*meterPoint;
+      return startPoints + (distance - kPoint)*meterPoint;
   }
 };
 
