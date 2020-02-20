@@ -1,18 +1,20 @@
 // calculateDistancePoints.js
 const calculateDistancePoints = (distance, hillSize, kPoint) => {
   let startPoints, meterPoint = 0;
-  if (hillSize === 'normal') {
-    startPoints = 60;
-    meterPoint = 2;
-  } else {
-    if (hillSize === 'big') {
+  switch(hillSize) {
+    case 'normal':
+      startPoints = 60;
+      meterPoint = 2;
+      break;
+    case 'big':
       startPoints = 60;
       meterPoint = 1.8;
-      } else {
-      if (hillSize === 'mamut') {
-        startPoints = 120;
-        meterPoint = 1.2;
-      } else {
+      break;
+    case 'mamut':
+      startPoints = 120;
+      meterPoint = 1.2;
+      break;
+      default:
         return null;
       }
     }
@@ -30,7 +32,5 @@ const calculateDistancePoints = (distance, hillSize, kPoint) => {
     return startPoints + (distance - kPoint)*meterPoint;
   }
 };
-
-
 
 module.exports = calculateDistancePoints;
